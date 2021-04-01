@@ -44,6 +44,39 @@ root # give a test
 
 *For Singularity v3+, in particular CERN computing users: `rhic_sl7_ext.simg` might be slow to load under certain Singularity security settings at your computing center. In that case, please load with an alternative image: `singularity shell -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext`*
 
+
+As an example, for Ubuntu hosts, here is a set of commands executing Option-1
+
+```bash
+sudo apt-get install gcc perl make
+
+# install cvmfs
+# https://cernvm.cern.ch/portal/filesystem/quickstart
+sudo apt-get install lsb-release
+wget https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
+sudo dpkg -i cvmfs-release-latest_all.deb 
+rm -f cvmfs-release-latest_all.deb 
+sudo apt-get update sudo 
+apt-get install cvmfs cvmfs-config-default 
+sudo cvmfs_config setup 
+
+sudo emacs  /etc/cvmfs/default.local # adapt to include following two lines
+     CVMFS_REPOSITORIES=eic.opensciencegrid.org[,others] 
+     CVMFS_HTTP_PROXY=DIRECT
+     
+cvmfs_config probe
+
+# singularity
+sudo apt install singularity singularity-container singularity 
+
+singularity shell -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext.simg
+
+source /cvmfs/eic.opensciencegrid.org/x8664_sl7/opt/fun4all/core/bin/eic_setup.sh -n   # setup EIC Fun4All environment in the singularity container shell. Note the shell is bash by default
+
+root # give a test
+```
+
+
 ## Option-2: Download the EIC Fun4All build via HTTPS archive
 
 

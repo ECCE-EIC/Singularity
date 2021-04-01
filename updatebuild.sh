@@ -3,7 +3,7 @@
 # Default parameter
 build='new';
 URLBase='https://www.phenix.bnl.gov/WWW/publish/phnxbld/EIC/Singularity';
-sysname='x8664_sl7'
+sysname='gcc-8.3'
 DownloadBase='cvmfs/eic.opensciencegrid.org';
 CleanDownload=false
 
@@ -41,6 +41,15 @@ done
 
 echo "This macro download/update EIC ${build} build to $DownloadBase"
 echo "Source is at $URLBase"
+echo ""
+echo "******************************************************************"
+echo "Important: you are now using the c++17 distribution (--sysname=gcc-8.3) by default"
+echo "The previous default (x8664_sl7) is available but will not be updated anymore"
+echo "If you have been using --sysname=gcc-8.3 up to now, nothing changes"
+echo "For everyone else - you need to recompile your code"
+echo "GEANT4 has been upgraded to 10.06.02"
+echo "ROOT has been upgraded to 6.22.02"
+echo "******************************************************************"
 echo ""
 echo "If you have CVMFS file system directly mounted on your computer,"
 echo "you can skip this download and mount /cvmfs/eic.opensciencegrid.org to the singularity container directly."

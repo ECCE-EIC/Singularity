@@ -1,8 +1,8 @@
-# Singularity container for EIC Fun4All
+# Singularity container for ECCE@EIC Fun4All
 
-Singularity container for EIC Fun4All allows any user to run the EIC RCF/SDCC environment with the nightly builds on your local computers or on external high-performance computing clusters. 
+Singularity container for ECCE@EIC Fun4All allows any user to run the EIC RCF/SDCC environment with the nightly builds on your local computers or on external high-performance computing clusters. 
 
-This repository is part of [the software tutorial](https://eic-detector.github.io/tutorials_landing_page.html), in particular for users offsite to [the BNL RACF computer center](https://www.racf.bnl.gov/). This repository includes the instruction and local update macro for this Singularity container, which ensures binary reproducible simulation and reconstruction.
+This repository is aimed for users offsite to [the BNL RACF computer center](https://www.racf.bnl.gov/). This repository includes the instruction and local update macro for this Singularity container, which ensures binary reproducible simulation and reconstruction.
 
 **Daily validations:** `updatebuild.sh --build=new` 
 [![Build Status](https://web.sdcc.bnl.gov/jenkins-sphenix/buildStatus/icon?job=EIC%2Fsingularity-download-validation)](https://web.sdcc.bnl.gov/jenkins-sphenix/job/ECCE/job/singularity-download-validation/)

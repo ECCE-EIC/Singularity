@@ -2,9 +2,9 @@
 
 # Default parameter
 build='new';
-URLBase='https://www.phenix.bnl.gov/WWW/publish/phnxbld/EIC/Singularity';
+URLBase='https://www.phenix.bnl.gov/WWW/publish/phnxbld/ECCE/Singularity';
 sysname='gcc-8.3'
-DownloadBase='cvmfs/eic.opensciencegrid.org';
+DownloadBase='cvmfs/eic.opensciencegrid.org/';
 CleanDownload=false
 
 # Parse input parameter
@@ -39,17 +39,8 @@ do
     esac
 done
 
-echo "This macro download/update EIC ${build} build to $DownloadBase"
+echo "This macro download/updates the ECCE ${build} build to $DownloadBase"
 echo "Source is at $URLBase"
-echo ""
-echo "******************************************************************"
-echo "Important: you are now using the c++17 distribution (--sysname=gcc-8.3) by default"
-echo "The previous default (x8664_sl7) is available but will not be updated anymore"
-echo "If you have been using --sysname=gcc-8.3 up to now, nothing changes"
-echo "For everyone else - you need to recompile your code"
-echo "GEANT4 has been upgraded to 10.06.02"
-echo "ROOT has been upgraded to 6.22.02"
-echo "******************************************************************"
 echo ""
 echo "If you have CVMFS file system directly mounted on your computer,"
 echo "you can skip this download and mount /cvmfs/eic.opensciencegrid.org to the singularity container directly."
@@ -117,40 +108,26 @@ echo "--------------------------------------------------------"
 
 md5_check ${URLBase}/MCEG.tar.bz2.md5 ${DownloadBase}/singularity/MCEG.tar.bz2.md5
 
-if [ $? != 0 ]; then
-    if [ -d ${DownloadBase}/${sysname}/MCEG ]; then
-        echo "deleting old Monte Carlos"
-	rm -rf ${DownloadBase}/${sysname}/MCEG
-    fi
-    echo "Downloading ${URLBase}/MCEG.tar.bz2 -> ${DownloadBase}/singularity/ ..."
-    curl -H 'Cache-Control: no-cache' -k ${URLBase}/MCEG.tar.bz2   | tar xjf -
-    curl -H 'Cache-Control: no-cache' -ks ${URLBase}/MCEG.tar.bz2.md5 > ${DownloadBase}/singularity/MCEG.tar.bz2.md5
-else
-    echo "${URLBase}/MCEG.tar.bz2 has not changed since the last download"
-    echo "- Its md5 sum is ${DownloadBase}/singularity/MCEG.tar.bz2.md5 : " `cat ${DownloadBase}/singularity/MCEG.tar.bz2.md5`
-fi
-
-
 
 echo "--------------------------------------------------------"
-echo "EIC build images"
+echo "ECCE build images"
 echo "--------------------------------------------------------"
 
 declare -a images=("opt.tar.bz2" "offline_main.tar.bz2" "utils.tar.bz2")
-mkdir -p ${DownloadBase}/${sysname}/.md5/${build}/
+mkdir -p ${DownloadBase}/ecce/${sysname}/.md5/${build}/
 
 
 ## now loop through the above array
 for tarball in "${images[@]}"
 do
     # echo "Downloading and decompress ${URLBase}/${build}/${tarball} ..."
-    md5file="${DownloadBase}/${sysname}/.md5/${build}/${tarball}.md5";
+    md5file="${DownloadBase}/ecce/${sysname}/.md5/${build}/${tarball}.md5";
     md5_check ${URLBase}/${sysname}/${build}/${tarball}.md5 ${md5file}
     if [ $? != 0 ]; then
 	# clean up existing installation if it exists
 	case "$tarball" in
 	    opt*)
-		deldir=${DownloadBase}/${sysname}/opt/fun4all/core
+		deldir=${DownloadBase}/ecce/${sysname}/opt/fun4all/core
 		if [ -d ${deldir} ]; then
 		    echo "Cleaning ${deldir}"
                     rm -rf ${deldir}
@@ -158,10 +135,10 @@ do
 		;;
 	    offline*)
                 # first remove the ${build} symlink if it exists
-		if [ -e ${DownloadBase}/${sysname}/release/${build} ]; then
-		    rm ${DownloadBase}/${sysname}/release/${build}
+		if [ -e ${DownloadBase}/ecce/${sysname}/release/${build} ]; then
+		    rm ${DownloadBase}/ecce/${sysname}/release/${build}
 		fi
-		deldir=${DownloadBase}/${sysname}/release/release_${build}
+		deldir=${DownloadBase}/ecce/${sysname}/release/release_${build}
 		if [ -d ${deldir} ]; then
 		    echo "cleaning $deldir"
 		    chmod -R 755 ${deldir}
@@ -169,7 +146,7 @@ do
 		fi
 		;;
 	    utils*)
-		deldir=${DownloadBase}/${sysname}/opt/fun4all/utils
+		deldir=${DownloadBase}/ecce/${sysname}/opt/fun4all/utils
 		if [ -d ${deldir} ]; then
 		    echo "Cleaning ${deldir}"
                     rm -rf ${deldir}
@@ -189,10 +166,10 @@ done
 
 
 echo "--------------------------------------------------------"
-echo "Done! To run the EIC container in shell mode:"
+echo "Done! To run the ECCE container in shell mode:"
 echo ""
 echo "singularity shell -B cvmfs:/cvmfs cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext.simg"
-echo "source /cvmfs/eic.opensciencegrid.org/$sysname/opt/fun4all/core/bin/eic_setup.sh -n $build"
+echo "source /cvmfs/eic.opensciencegrid.org/ecce/$sysname/opt/fun4all/core/bin/eic_setup.sh -n $build"
 echo ""
 echo "More on singularity tutorials: https://www.sylabs.io/docs/"
 echo "More on directly mounting cvmfs instead of downloading: https://github.com/eic/Singularity"

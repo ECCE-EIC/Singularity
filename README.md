@@ -5,7 +5,7 @@ Singularity container for ECCE@EIC Fun4All allows any user to run the EIC RCF/SD
 This repository is aimed for users offsite to [the BNL RACF computer center](https://www.racf.bnl.gov/). This repository includes the instruction and local update macro for this Singularity container, which ensures binary reproducible simulation and reconstruction.
 
 **Option-2 CI validations:** `updatebuild.sh --build=new` 
-[![Build Status](https://web.sdcc.bnl.gov/jenkins-sphenix/buildStatus/icon?job=EIC%2Fsingularity-download-validation)](https://web.sdcc.bnl.gov/jenkins-sphenix/job/ECCE/job/singularity-download-validation/)
+[![Build Status](https://web.sdcc.bnl.gov/jenkins-sphenix/buildStatus/icon?job=ECCE%2Fsingularity-download-validation)](https://web.sdcc.bnl.gov/jenkins-sphenix/job/ECCE/job/singularity-download-validation/)
 
 [![Macros](https://img.shields.io/badge/standard%20macros-git-green.svg)](https://github.com/ecce-eic/macros)
 [![Tutorials](https://img.shields.io/badge/tutorials-git-green.svg)](https://github.com/ecce-eic/tutorials)

@@ -5,12 +5,12 @@ Singularity container for EIC Fun4All allows any user to run the EIC RCF/SDCC en
 This repository is part of [the software tutorial](https://eic-detector.github.io/tutorials_landing_page.html), in particular for users offsite to [the BNL RACF computer center](https://www.racf.bnl.gov/). This repository includes the instruction and local update macro for this Singularity container, which ensures binary reproducible simulation and reconstruction.
 
 **Daily validations:** `updatebuild.sh --build=new` 
-[![Build Status](https://web.sdcc.bnl.gov/jenkins-sphenix/buildStatus/icon?job=EIC%2Fsingularity-download-validation)](https://web.sdcc.bnl.gov/jenkins-sphenix/job/EIC/job/singularity-download-validation/)
+[![Build Status](https://web.sdcc.bnl.gov/jenkins-sphenix/buildStatus/icon?job=EIC%2Fsingularity-download-validation)](https://web.sdcc.bnl.gov/jenkins-sphenix/job/ECCE/job/singularity-download-validation/)
 
-[![Macros](https://img.shields.io/badge/standard%20macros-git-green.svg)](https://github.com/eic/fun4all_macros)
-[![Tutorials](https://img.shields.io/badge/tutorials-git-green.svg)](https://github.com/eic/fun4all_eic_tutorials)
-[![Doxygen](https://img.shields.io/badge/code%20reference-Doxygen-green.svg)](https://eic.github.io/doxygen/)
-[![Last Commit](https://img.shields.io/github/last-commit/sPHENIX-Collaboration/Singularity.svg)](https://github.com/eic/Singularity/commits/master)
+[![Macros](https://img.shields.io/badge/standard%20macros-git-green.svg)](https://github.com/ecce-eic/macros)
+[![Tutorials](https://img.shields.io/badge/tutorials-git-green.svg)](https://github.com/ecce-eic/tutorials)
+[![Doxygen](https://img.shields.io/badge/code%20reference-Doxygen-green.svg)](https://ecce-eic.github.io/doxygen/)
+[![Last Commit](https://img.shields.io/github/last-commit/sPHENIX-Collaboration/Singularity.svg)](https://github.com/ecce-eic/Singularity/commits/master)
 
 # How to download
 

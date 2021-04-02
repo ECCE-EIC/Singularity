@@ -38,7 +38,7 @@ The advantage of **Option-1 Mount EIC CVMFS** is that it mounts all EIC Fun4All 
 
 ```
 singularity shell -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext.simg
-source /cvmfs/eic.opensciencegrid.org/x8664_sl7/opt/fun4all/core/bin/eic_setup.sh -n   # setup EIC Fun4All environment in the singularity container shell. Note the shell is bash by default
+source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n   # setup EIC Fun4All environment in the singularity container shell. Note the shell is bash by default
 root # give a test
 ```
 
@@ -71,7 +71,7 @@ sudo apt install singularity singularity-container singularity
 
 singularity shell -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext.simg
 
-source /cvmfs/eic.opensciencegrid.org/x8664_sl7/opt/fun4all/core/bin/eic_setup.sh -n   # setup EIC Fun4All environment in the singularity container shell. Note the shell is bash by default
+source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n   # setup EIC Fun4All environment in the singularity container shell. Note the shell is bash by default
 
 root # give a test
 ```
@@ -104,7 +104,7 @@ This script downloads the current release of the EIC Singularity container and u
 
 ```
 singularity shell -B cvmfs:/cvmfs cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext.simg
-source /cvmfs/eic.opensciencegrid.org/x8664_sl7/opt/fun4all/core/bin/eic_setup.sh -n   # setup EIC environment in the singularity container shell. Note the shell is bash by default
+source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n   # setup EIC environment in the singularity container shell. Note the shell is bash by default
 root # give a test
 ```
 *if you get an error, start singularity with --writable like* 
@@ -125,8 +125,7 @@ After entering the Singularity container, you can source the EIC environment and
 ```
 computer:~/> singularity shell <options depending on which of the two downloading options above>
 Singularity: Invoking an interactive shell within container...
-Singularity rhic_sl7_ext.simg:~/> source  /cvmfs/eic.opensciencegrid.org/x8664_sl7/opt/fun4all/core/bin/eic_setup.sh -n
-# or source /cvmfs/eic.opensciencegrid.org/gcc-8.3/opt/sphenix/core/bin/sphenix_setup.sh -n # if using gcc v8
+Singularity rhic_sl7_ext.simg:~/> source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n
 Singularity rhic_sl7_ext.simg:~/> lsb_release  -a         # Verify same environment shows up as that on RCF
 LSB Version:	:core-4.1-amd64:core-4.1-ia32:core-4.1-noarch
 Distributor ID:	Scientific

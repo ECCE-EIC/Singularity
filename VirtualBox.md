@@ -6,7 +6,7 @@ On Windows or MacOS PC/laptop though, it could be tricky to run Singularity dire
 
 1. Install VirtualBox on your host system: [Virtual Box](https://www.virtualbox.org/)
 
-2. Download [EIC Ubuntu 18.04LTS Image](https://sphenix.sdcc.bnl.gov/WWW/user/phnxbld/EIC/Singularity/Fun4AllSingularityDistribution.ova). The MD5SUM is `87a6464dbae831724bc9eb3b508f2646`.
+2. Download [EIC Ubuntu 18.04LTS Image](https://www.phenix.bnl.gov/WWW/publish/phnxbld/ECCE/Singularity/Fun4AllSingularityDistribution.ova). The MD5SUM is `87a6464dbae831724bc9eb3b508f2646`.
 
 This image has CVMFS and Singularity3 preinstalled, enabling direct loading all EIC Fun4All builds via the OpenScienceGrid network (i.e. Option-1 of [main documentation](/README.md)).   
 
@@ -20,8 +20,8 @@ Then you are good to go. Start the imported Virtual Box. **The Ubuntu VM is set 
 
 **You need to copy updated versions:**
 ```
-cp  /cvmfs/eic.opensciencegrid.org/singularity/fun4all_scripts/singularity_shell.sh .
-cp /cvmfs/eic.opensciencegrid.org/singularity/fun4all_scripts/setup.sh .
+cp  /cvmfs/eic.opensciencegrid.org/singularity/fun4all_scripts/ecce/singularity_shell.sh .
+cp /cvmfs/eic.opensciencegrid.org/singularity/fun4all_scripts/ecce/setup.sh .
 ```
 
 Start using it with an Ubuntu terminal:
@@ -32,7 +32,7 @@ entering the Fun4All singularity container on /cvmfs/eic.opensciencegrid.org
 
 Singularity> source setup.sh 
 .....
-Using the Fun4All build at /cvmfs/eic.opensciencegrid.org/x8664_sl7/release/release_new/new.3 (the build version number may be different, it is 1-4)
+Using the Fun4All build at /cvmfs/eic.opensciencegrid.org/gcc-8.3/release/release_new/new.3 (the build version number may be different, it is 1-4)
 Local build will be installed at /home/fun4all/install
 
 Singularity> git clone https://github.com/eic/fun4all_macros.git
@@ -42,7 +42,7 @@ Cloning into 'macros'...
 Singularity> cd fun4all_macros/detectors/EICDetector
 Singularity> root Fun4All_G4_EICDetector.C
    ------------------------------------------------------------
-  | Welcome to ROOT 6.16/00                  https://root.cern |
+  | Welcome to ROOT 6.22/02                  https://root.cern |
 ...
 ```
 Then you are welcome to follow the default macro tutorials: https://github.com/eic/fun4all_macros

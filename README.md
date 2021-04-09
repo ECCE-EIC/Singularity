@@ -38,7 +38,7 @@ The advantage of **Option-1 Mount EIC CVMFS** is that it mounts all EIC Fun4All 
 
 ```
 singularity shell -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext.simg
-source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n   # setup EIC Fun4All environment in the singularity container shell. Note the shell is bash by default
+source /cvmfs/eic.opensciencegrid.org/ecce/default/opt/fun4all/core/bin/ecce_setup.sh -n   # setup EIC Fun4All environment in the singularity container shell. Note the shell is bash by default
 root # give a test
 ```
 
@@ -71,7 +71,7 @@ sudo apt install singularity singularity-container singularity
 
 singularity shell -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext.simg
 
-source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n   # setup EIC Fun4All environment in the singularity container shell. Note the shell is bash by default
+source /cvmfs/eic.opensciencegrid.org/ecce/default/opt/fun4all/core/bin/ecce_setup.sh -n   # setup EIC Fun4All environment in the singularity container shell. Note the shell is bash by default
 
 root # give a test
 ```
@@ -97,14 +97,14 @@ cd Singularity/
 ./updatebuild.sh
 ```
 
-This script downloads the current release of the EIC Singularity container and up to date versions of our software. The total download size is about 5 GB  and the decompressed disk usage is about 10 GB. Two build versions are supported with default as the `new` build with`./updatebuild.sh`. The new build with gcc 8.3 can be downloaded using `./updatebuild.sh --sysname=gcc-8.3`
+This script downloads the current release of the EIC Singularity container and up to date versions of our software. The total download size is about 5 GB  and the decompressed disk usage is about 10 GB. Two build versions are supported with default as the `new` build with`./updatebuild.sh`.
 
 
 4. Start the container with 
 
 ```
 singularity shell -B cvmfs:/cvmfs cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext.simg
-source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n   # setup EIC environment in the singularity container shell. Note the shell is bash by default
+source /cvmfs/eic.opensciencegrid.org/ecce/default/opt/fun4all/core/bin/ecce_setup.sh -n   # setup EIC environment in the singularity container shell. Note the shell is bash by default
 root # give a test
 ```
 *if you get an error, start singularity with --writable like* 
@@ -125,7 +125,7 @@ After entering the Singularity container, you can source the EIC environment and
 ```
 computer:~/> singularity shell <options depending on which of the two downloading options above>
 Singularity: Invoking an interactive shell within container...
-Singularity rhic_sl7_ext.simg:~/> source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n
+Singularity rhic_sl7_ext.simg:~/> source /cvmfs/eic.opensciencegrid.org/ecce/default/opt/fun4all/core/bin/ecce_setup.sh -n
 Singularity rhic_sl7_ext.simg:~/> lsb_release  -a         # Verify same environment shows up as that on RCF
 LSB Version:	:core-4.1-amd64:core-4.1-ia32:core-4.1-noarch
 Distributor ID:	Scientific

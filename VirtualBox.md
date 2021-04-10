@@ -24,6 +24,8 @@ cp  /cvmfs/eic.opensciencegrid.org/singularity/fun4all_scripts/ecce/singularity_
 cp /cvmfs/eic.opensciencegrid.org/singularity/fun4all_scripts/ecce/setup.sh .
 ```
 
+*Plesae note the first use of CVMFS may be slow as it synchronizes online*
+
 Start using it with an Ubuntu terminal:
 ```
 fun4all@Fun4AllSingularity:~$ ./singularity_shell.sh

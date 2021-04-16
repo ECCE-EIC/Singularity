@@ -12,17 +12,20 @@ This image has CVMFS and Singularity3 preinstalled, enabling direct loading all 
 
 3. Import the above image to your virtual box ([HowTs](https://www.google.com/search?q=Virtal+box+import+ova)). Please ensure you have internet connection before the next step (e.g. visit www.bnl.gov from inside the VirtualBox)
 
-Then you are good to go. Start the imported Virtual Box. **The Ubuntu VM is set to do unattended-upgrades. On the first start it will pull in and install a lot of package updates**. The default user is `fun4all` with password of `fun4all`. It would be good practice to [change at least the password](https://www.google.com/search?q=ubuntu+howto+change+password) after first login. Following files are installed in the home folder:
-* `~/singularity_shell.sh`: execute this script to get a bash shell with the Singularity container.
+Then you are good to go. Start the imported Virtual Box. **The Ubuntu VM is set to do unattended-upgrades. On the first start it will pull in and install a lot of package updates**. The default user is `fun4all` with password of `fun4all`. It would be good practice to [change at least the password](https://www.google.com/search?q=ubuntu+howto+change+password) after first login. 
 
+Following files should be installed in the home folder:
+
+```
+cp  /cvmfs/eic.opensciencegrid.org/singularity/fun4all_scripts/ecce/singularity_shell.sh ~/
+cp /cvmfs/eic.opensciencegrid.org/singularity/fun4all_scripts/ecce/setup.sh ~/
+```
+
+Then we have:
+
+* `~/singularity_shell.sh`: execute this script to get a bash shell with the Singularity container.
 * `~/setup.sh`: source this macro from inside the Singularity container to use the lastest build 
 * `~/install/`: local build folder to be used for `$MYINSTALL` area, which is currently empty
-
-**You need to copy updated versions:**
-```
-cp  /cvmfs/eic.opensciencegrid.org/singularity/fun4all_scripts/ecce/singularity_shell.sh .
-cp /cvmfs/eic.opensciencegrid.org/singularity/fun4all_scripts/ecce/setup.sh .
-```
 
 *Plesae note the first use of CVMFS may be slow as it synchronizes online*
 

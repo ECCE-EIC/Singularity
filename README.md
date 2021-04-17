@@ -17,7 +17,7 @@ This repository is aimed for users offsite to [the BNL RACF computer center](htt
 EIC Fun4All software can be obtained to your local computing environment in two ways. You can use both ways concurrently - there is no collision between these two options. Which you use is determined by the start of the singularity container (look closely - for option 1 you use /cvmfs:/cvmfs which mounts our cvmfs volume under /cvmfs, for option 2 you use cvmfs:/cvmfs which mounts your local copy under /cvmfs)
 
 1. **[Option-1 Mount EIC CVMFS](#option-1-mount-eic-cvmfs)**: EIC singularity container, software and builds are distribute on [CVMFS](https://www.racf.bnl.gov/docs/services/cvmfs/info) since Nov 2018. Like RCF/SDCC computing cluster at BNL, external collaborating computing center could also mount the `/cvmfs/eic.opensciencegrid.org/` CVMFS repository, which automatically obtain, buffer and update all EIC Fun4All build files. `/cvmfs/eic.opensciencegrid.org` is also distributed by default throughout the [Open Science Grid](opensciencegrid.org). 
-2. **[Option-2 Download sPHENIX build via HTTPS archive](#option-2-download-the-eic-fun4all-build-via-https-archive)**: one can also directly download the files for the EIC Fun4All build to a local folder via [the nightly refreshed HTTPS archive](https://sphenix.sdcc.bnl.gov/WWW/user/phnxbld/EIC/Singularity/). 
+2. **[Option-2 Download sPHENIX build via HTTPS archive](#option-2-download-the-eic-fun4all-build-via-https-archive)**: one can also directly download the files for the EIC Fun4All build to a local folder via [the nightly refreshed HTTPS archive](https://www.phenix.bnl.gov/WWW/publish/phnxbld/ECCE/Singularity/). 
 
 The advantage of **Option-1 Mount EIC CVMFS** is that it mounts all EIC Fun4All builds and software and performs automatic caching and updates. This would be suitable for the case of a computing center or server environment. However, it requires constant network connection to function. Therefore, if you wish to use the EIC Fun4All software on a laptop during travel, **Option-2 Downloading EIC Fun4All builds via HTTPS archive** would work best.
 
@@ -87,7 +87,7 @@ root # give a test
 2. Download this repository:
 
 ```
-git clone https://github.com/eic/Singularity.git
+git clone https://github.com/ECCE-EIC/Singularity.git
 cd Singularity/
 ```
 

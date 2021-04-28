@@ -136,7 +136,7 @@ Codename:	Nitrogen
 
 This bring up a shell environment which is identical to sPHENIX RCF. Meanwhile, it use your local file system for non-system files, e.g. it directly work on your code or data directories. Singularity container also support running in the [command mode or background mode](https://sylabs.io/docs/). 
 
-Next, please try [the software tutorial](https://eic-detector.github.io/tutorials_landing_page.html). 
+Next, please try [the software tutorial](https://eic-detector.github.io/tutorials_landing_page.html) and [the default sim+reco macros](https://github.com/ECCE-EIC/macros).
 
 # Troubleshooting
 

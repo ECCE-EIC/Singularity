@@ -58,3 +58,9 @@ singularity shell -B cvmfs:/cvmfs cvmfs/eic.opensciencegrid.org/singularity/rhic
 ```
 
 ![Screenshot with Fun4All_G4_EICDetector.C](screenshot.png)
+
+# Troubleshooting
+
+If you are having display issues then you can tell virtualbox to use a different graphics support by going to Settings->Display->Graphics Controller and selecting VboxVGA (You can also disable 3D acceleration here)
+
+![Changing Graphics Support](screenshotGraphicsSupport.png)

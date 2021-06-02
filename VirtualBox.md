@@ -40,17 +40,17 @@ Singularity> source setup.sh
 Using the Fun4All build at /cvmfs/eic.opensciencegrid.org/gcc-8.3/release/release_new/new.3 (the build version number may be different, it is 1-4)
 Local build will be installed at /home/fun4all/install
 
-Singularity> git clone https://github.com/eic/fun4all_macros.git
+Singularity> git clone https://github.com/ecce-eic/macros.git
 Cloning into 'macros'...
 ...
 
-Singularity> cd fun4all_macros/detectors/EICDetector
+Singularity> cd macros/detectors/EICDetector
 Singularity> root Fun4All_G4_EICDetector.C
    ------------------------------------------------------------
   | Welcome to ROOT 6.22/02                  https://root.cern |
 ...
 ```
-Then you are welcome to follow the default macro tutorials: https://github.com/eic/fun4all_macros
+Then you are welcome to follow the default macro tutorials: https://github.com/ecce-eic/macros
 
 Please note the first use of a day will be slow, as CVMFS caches files from BNL SDCC over the network. You are also welcome use [Option-2 downloading a build and run the software without internet](/README.md#option-2-download-sphenix-build-via-https-archive). In this case you have to start the singularity container via
 ```
